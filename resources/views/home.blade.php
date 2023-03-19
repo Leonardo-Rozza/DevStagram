@@ -5,5 +5,6 @@
 @endsection
 
 @section('contenido')
-    <p>Hola, este contenido de injecto dinámicamente</p>
+    <x-listar-post :posts="$posts"/>
 @endsection
+

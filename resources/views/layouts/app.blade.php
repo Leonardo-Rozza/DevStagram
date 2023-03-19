@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('styles')
-    <title>DevStagram - @yield('titulo')</title>
+    <title> DevStagram - @yield('titulo')</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+    @livewireStyles
 </head>
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-white shadow">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-black">
+            <a href="{{route('home')}}" class="text-3xl font-black">
                 DevStagram
-            </h1>
+            </a>
             @auth
                 <nav class="flex gap-2 items-center">
                     <a href="{{ route('posts.create') }}" class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
@@ -53,5 +54,8 @@
         <footer class="text-center p-5 mt-14 text-gray-500 font-bold uppercase">
             DevStagram - Todos los derechos reservados {{now()->year}}
         </footer>
+
+    @livewireScripts
+
 </body>
 </html>
